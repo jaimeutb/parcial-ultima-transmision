@@ -1,0 +1,95 @@
+{
+  "titulo": "El faro de Isla Gris",
+  "inicio": "faro_muelle",
+  "variables": {
+    "tiene_llave": false,
+    "lampara_encendida": false
+  },
+  "escenas": [
+    {
+      "id": "faro_muelle",
+      "texto": "Cae la tarde y se acerca una tormenta. Llegas al muelle de Isla Gris: el faro lleva apagado tres noches y un pesquero aún no ha vuelto. Entre las redes abandonadas brilla algo metálico.",
+      "final": false,
+      "opciones": [
+        {
+          "id": "faro_buscar_llave",
+          "texto": "Revisar las redes",
+          "destino": "faro_puerta",
+          "condiciones": {},
+          "efectos": {
+            "tiene_llave": true
+          }
+        },
+        {
+          "id": "faro_ir_a_la_puerta",
+          "texto": "Ir directo a la puerta del faro",
+          "destino": "faro_puerta",
+          "condiciones": {},
+          "efectos": {}
+        }
+      ]
+    },
+    {
+      "id": "faro_puerta",
+      "texto": "La puerta de hierro del faro está cerrada con candado. El viento sopla cada vez más fuerte.",
+      "final": false,
+      "opciones": [
+        {
+          "id": "faro_abrir_candado",
+          "texto": "Abrir el candado con la llave oxidada",
+          "destino": "faro_sala_lampara",
+          "condiciones": {
+            "tiene_llave": true
+          },
+          "efectos": {}
+        },
+        {
+          "id": "faro_esperar_tormenta",
+          "texto": "Refugiarse en el muelle y esperar",
+          "destino": "faro_costa_oscura",
+          "condiciones": {},
+          "efectos": {}
+        }
+      ]
+    },
+    {
+      "id": "faro_sala_lampara",
+      "texto": "Subes la escalera de caracol hasta la sala de la lámpara. Hay una palanca de encendido y, a lo lejos, una luz diminuta que se balancea sobre las olas.",
+      "final": false,
+      "opciones": [
+        {
+          "id": "faro_encender_lampara",
+          "texto": "Accionar la palanca",
+          "destino": "faro_rescate",
+          "condiciones": {
+            "lampara_encendida": false
+          },
+          "efectos": {
+            "lampara_encendida": true
+          }
+        },
+        {
+          "id": "faro_bajar_sin_encender",
+          "texto": "Bajar sin tocar nada",
+          "destino": "faro_costa_oscura",
+          "condiciones": {},
+          "efectos": {
+            "lampara_encendida": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "faro_rescate",
+      "texto": "El haz de luz barre el mar. El pesquero corrige el rumbo y entra a salvo en la bahía. Desde la cubierta, alguien agita una linterna para darte las gracias.",
+      "final": true,
+      "opciones": []
+    },
+    {
+      "id": "faro_costa_oscura",
+      "texto": "La costa queda a oscuras toda la noche. Al amanecer, el pesquero aparece varado en las rocas; la tripulación se salvó, pero nadie sabe por qué el faro siguió apagado.",
+      "final": true,
+      "opciones": []
+    }
+  ]
+}
