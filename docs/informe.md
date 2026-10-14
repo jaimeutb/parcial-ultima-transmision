@@ -37,9 +37,9 @@
 
 **Proceso elegido.** [COMPLETAR/confirmar] Proceso **incremental** con prácticas ágiles ligeras: incrementos cortos (modelo → validador → sesión → CLI → pruebas), cada uno cerrado con commit y pruebas. **Alternativa comparada:** cascada. Se descartó porque el cambio anunciado para la hora 6 hacía inviable congelar requisitos y diseño; el enfoque incremental permitió etiquetar `v1-inicial` y absorber el cambio en un incremento acotado.
 
-**Actividades en esta entrega.** *Especificación*: RF/RNF con criterios Dado/Cuando/Entonces y preguntas (`docs/requisitos.md`). *Desarrollo*: commits pequeños que citan RF o pruebas. *Validación*: 148 pruebas automatizadas, verificación de RNF y recorridos manuales para el video. *Evolución*: solicitud de cambio analizada en `docs/analisis_impacto_cambio.md` y entregada como `v2-cambio`.
+**Actividades en esta entrega.** *Especificación*: RF/RNF con criterios Dado/Cuando/Entonces y preguntas (`docs/requisitos.md`). *Desarrollo*: commits pequeños que citan RF o pruebas. *Validación*: 301 pruebas automatizadas, verificación de RNF y recorridos manuales para el video. *Evolución*: solicitud de cambio analizada en `docs/analisis_impacto_cambio.md` y entregada como `v2-cambio`.
 
-**Prácticas ágiles.** Utilizadas: (1) **backlog priorizado y tablero** con responsables (`docs/backlog.md`, capturas en el anexo); (2) **desarrollo guiado por pruebas de aceptación**: los CA01–CA03 y el ejemplo del docente se convirtieron en pruebas antes de dar el ítem por terminado. [COMPLETAR/confirmar] **Descartada:** [COMPLETAR/confirmar] *programación en pareja*, porque el trabajo fue individual; la revisión se sustituyó por pruebas automatizadas y una segunda lectura de los requisitos (ver §4).
+**Prácticas ágiles.** Utilizadas: (1) **backlog priorizado y tablero** con responsables (`docs/backlog.md`, capturas en el anexo); (2) **desarrollo guiado por pruebas de aceptación**: los CA01–CA03 y el ejemplo del docente se convirtieron en pruebas antes de dar el ítem por terminado. **Descartada:** [COMPLETAR/confirmar] *programación en pareja*, porque el trabajo fue individual; la revisión se sustituyó por pruebas automatizadas y una segunda lectura de los requisitos (ver §4).
 
 **Definición de terminado.** Ver `docs/backlog.md` (7 criterios: RF con aceptación, motor sin datos de historias, pruebas pasando, sin tracebacks, documentos coherentes, commit pequeño).
 
@@ -79,7 +79,8 @@ Python 3.10, biblioteca estándar y pytest (MIT). `motor/` tiene 7 archivos (5 m
 | Bloqueo | 3 | pasan |
 | CLI | 11 | pasan |
 | RNF-01 / RNF-02 / RNF-03 | 5 / 23 / 2 | pasan |
-| **Total** | **148** | **148 pasan, 0 fallan** |
+| Coherencia de la documentación (matriz y diagrama de clases vs. código) | 153 | pasan |
+| **Total** | **301** | **301 pasan, 0 fallan** |
 
 Fuente: `evidencias/resultados_pruebas.txt` (pytest 9.1.1, Python 3.10.11). RNF: `evidencias/rnf/resultado_rnf.txt` — RNF-01 CUMPLE (0 literales, 0 líneas de `motor/`, finales alcanzados 2/2 y 3/3); RNF-02 CUMPLE (10/10 códigos, 21/21 casos, 0 tracebacks); RNF-03 CUMPLE (2 × 50 000 acciones, 0 excepciones, 0 violaciones).
 [COMPLETAR: si vuelven a ejecutar las pruebas antes de entregar, actualizar estos números con `python scripts/ejecutar_pruebas.py`.]
@@ -102,7 +103,8 @@ Trabajo individual: todos los commits de `evidencias/historial_git.txt` (autor `
 |---|---|---|
 | Python 3.10 y su biblioteca estándar | lenguaje, `json`, `dataclasses`, `zipfile`, `subprocess` | PSF License |
 | pytest 9.1.1 (y dependencias: pluggy, iniconfig, packaging, colorama, exceptiongroup, tomli, Pygments) | pruebas automatizadas | MIT / BSD / Apache-2.0 |
-| Mermaid | sintaxis de los diagramas | MIT |
+| Mermaid (mermaid.js 11, cargado desde jsDelivr al generar el PDF) | dibujo de los diagramas | MIT |
+| Python-Markdown 3.10 y Google Chrome/Edge sin interfaz | conversión de `informe.md`/`anexo.md` a PDF (`scripts/generar_pdfs.py`) | BSD-3-Clause / navegador del sistema |
 | Claude Code (Anthropic), herramienta de IA | Generó a partir de un prompt del autor (`PROMPT_CLAUDE_CODE.md`): estructura y código del motor, segunda historia, pruebas, scripts de verificación y empaquetado, y borradores de estos documentos. | servicio de IA |
 
 **Cómo verificamos los resultados de la IA.** [COMPLETAR con detalles verídicos: qué revisaron línea a línea, qué ejecutaron, qué corrigieron o rechazaron.] Verificaciones reproducibles que ya constan en el repositorio: ejecución completa de pytest (148 pasan), `scripts/verificar_rnf.py`, recorridos manuales de los tres finales y de la segunda historia (video), y comparación del archivo oficial copiado con el original (idénticos byte a byte). El código del motor no reutiliza fragmentos de tutoriales externos. [COMPLETAR: otras fuentes consultadas, si las hubo.]

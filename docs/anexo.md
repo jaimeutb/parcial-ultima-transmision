@@ -136,7 +136,7 @@ sequenceDiagram
             else habilitada
                 S->>S: nuevas = copia(variables) + efectos
                 S->>S: _anterior = (escena, copia(variables))  [cambio RF17]
-                S->>S: escena = destino; variables = nuevas
+                S->>S: escena = destino, variables = nuevas
                 S-->>C: ResultadoAccion(OK)
             end
         end

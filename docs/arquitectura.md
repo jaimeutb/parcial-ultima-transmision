@@ -68,5 +68,7 @@ Las dependencias van en un solo sentido (de la interfaz hacia el modelo); el mod
 | Python (incluye `json`, `dataclasses`, `pathlib`, `random`, `subprocess`, `zipfile`) | 3.10.11 (requiere ≥ 3.10) | lenguaje y biblioteca estándar | PSF License |
 | pytest | 9.1.1 (`pytest>=7`) | pruebas automatizadas | MIT |
 | Dependencias de pytest instaladas por pip | pluggy 1.6.0, iniconfig 2.3.1, packaging 26.3, colorama 0.4.6, exceptiongroup 1.3.1, tomli 2.5.0, Pygments 2.21.0 | solo para ejecutar las pruebas | MIT; MIT; Apache-2.0 o BSD-2-Clause; BSD; MIT; MIT; BSD-2-Clause |
+| Python-Markdown | 3.10.3 (`requirements-docs.txt`) | solo para generar los PDF de la documentación | BSD-3-Clause |
+| mermaid.js | 11 (CDN jsDelivr) | dibujar diagramas al generar los PDF | MIT |
 
 El motor en ejecución solo usa la biblioteca estándar de Python.

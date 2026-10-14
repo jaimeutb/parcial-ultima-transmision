@@ -52,7 +52,7 @@ Si una historia es inválida, el programa lista **todos** los errores con códig
 ## Pruebas
 
 ```bash
-python -m pytest -v                    # 148 pruebas: U1–U6, I1, bloqueo, CLI y RNF
+python -m pytest -v                    # 301 pruebas: U1–U6, I1, bloqueo, CLI, RNF y coherencia de la documentación
 python scripts/ejecutar_pruebas.py     # igual, y guarda evidencias/resultados_pruebas.txt con fecha y versiones
 python scripts/verificar_rnf.py        # mide RNF-01..03 y guarda evidencias/rnf/resultado_rnf.txt
 ```
@@ -141,6 +141,14 @@ Condición visible: en E3 aparece `activar_codigo` solo si se investigó, y `act
 
 - `docs/informe.md` / `docs/informe.pdf` — informe (≤ 8 páginas de cuerpo).
 - `docs/anexo.md` / `docs/anexo.pdf` — diagramas, matriz y capturas del tablero (`python scripts/generar_anexo.py` lo regenera).
+
+Para regenerar los PDF después de editar los `.md` (requiere Chrome o Edge y conexión a internet para dibujar los diagramas):
+
+```bash
+pip install -r requirements-docs.txt
+python scripts/generar_anexo.py
+python scripts/generar_pdfs.py        # docs/informe.pdf y docs/anexo.pdf
+```
 - `docs/requisitos.md`, `docs/modelos.md`, `docs/arquitectura.md`, `docs/analisis_impacto_cambio.md`, `docs/trazabilidad.md`, `docs/backlog.md`, `docs/solicitud_cambio.md`.
 
 ## Empaquetado de la entrega
