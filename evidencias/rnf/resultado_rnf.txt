@@ -1,0 +1,48 @@
+Verificación de requisitos no funcionales
+Fecha: 2026-10-15T05:56:18+07:00
+Python: 3.10.11 (Windows 10)
+Comando: python scripts/verificar_rnf.py   Semilla RNF-03: 20261015
+
+RNF-01 Modificabilidad del contenido: CUMPLE
+  Meta: una historia nueva (>= 3 escenas, >= 1 condición, >= 1 efecto) se juega hasta todos sus finales con 0 líneas cambiadas en motor/.
+  el_faro.json: 5 escenas, 2 condición(es), 3 efecto(s)
+  Finales declarados: ['faro_costa_oscura', 'faro_rescate']  alcanzados por exploración: ['faro_costa_oscura', 'faro_rescate']
+  Historia oficial, finales alcanzados: ['E4', 'E5', 'E6']
+  Literales de historias en motor/*.py: 0 
+  Líneas de motor/ cambiadas en los commits que agregaron el_faro.json: 0
+
+RNF-02 Claridad de errores: CUMPLE
+  Meta: 100 % de los 10 códigos producen mensaje con causa e ID/campo, código de salida 2 y 0 tracebacks.
+  Códigos cubiertos: 10/10 (100 %)   Casos correctos: 21/21   Tracebacks: 0
+  [ok] ilegible_inexistente: 1. [ARCHIVO_ILEGIBLE] <tmp>\no_existe.json: No se encontró el archivo '<tmp>\no_existe.json'.
+  [ok] ilegible_json_roto: 1. [ARCHIVO_ILEGIBLE] <tmp>\ilegible_json_roto.json: El archivo 'ilegible_json_roto.json' no contiene JSON válido: se esperaba un valor (línea 1, columna 30).
+  [ok] ilegible_no_utf8: 1. [ARCHIVO_ILEGIBLE] <tmp>\ilegible_no_utf8.json: El archivo '<tmp>\ilegible_no_utf8.json' no está guardado con codificación UTF-8.
+  [ok] estructura_raiz_lista: 1. [ESTRUCTURA_INVALIDA] (raíz): La raíz del archivo debe ser un objeto {…} con la historia, pero es una lista.
+  [ok] estructura_escenas_no_lista: 1. [ESTRUCTURA_INVALIDA] escenas: El campo 'escenas' de la historia debe ser una lista […], pero contiene "E1".
+  [ok] estructura_condiciones_no_objeto: 1. [ESTRUCTURA_INVALIDA] escenas[2].opciones[0].condiciones (escena 'E3', opción 'activar_codigo'): El campo 'condiciones' de la opción debe ser un objeto {…}, pero contiene una lista.
+  [ok] estructura_final_no_booleano: 1. [ESTRUCTURA_INVALIDA] escenas[3].final (escena 'E4'): El campo 'final' de la escena debe ser un booleano (true/false), pero contiene "si".
+  [ok] campo_faltante_titulo: 1. [CAMPO_FALTANTE] titulo: Falta el campo obligatorio 'titulo' en la historia.
+  [ok] campo_faltante_texto_escena: 1. [CAMPO_FALTANTE] escenas[1].texto (escena 'E2'): Falta el campo obligatorio 'texto' en la escena.
+  [ok] campo_faltante_destino: 1. [CAMPO_FALTANTE] escenas[1].opciones[0].destino (escena 'E2', opción 'investigar'): Falta el campo obligatorio 'destino' en la opción.
+  [ok] inicio_inexistente: 1. [INICIO_INEXISTENTE] inicio: La escena inicial 'E0' no existe entre las escenas de la historia.
+  [ok] escena_duplicada: 1. [ESCENA_DUPLICADA] escenas[4].id (escena 'E4'): El ID de escena 'E4' está repetido; cada escena necesita un ID único.
+  [ok] opcion_duplicada: 1. [OPCION_DUPLICADA] escenas[1].opciones[1].id (escena 'E2', opción 'investigar'): El ID de opción 'investigar' está repetido dentro de la escena 'E2'.
+  [ok] destino_inexistente_CA03: 1. [DESTINO_INEXISTENTE] escenas[1].opciones[0].destino (escena 'E2', opción 'investigar'): El destino 'E99' no corresponde a ninguna escena de la historia.
+  [ok] variable_no_declarada_condicion: 1. [VARIABLE_NO_DECLARADA] escenas[2].opciones[0].condiciones.tiene_mapa (escena 'E3', opción 'activar_codigo'): La variable 'tiene_mapa' usada en 'condiciones' no está declarada en 'variables'.
+  [ok] variable_no_declarada_efecto: 1. [VARIABLE_NO_DECLARADA] escenas[1].opciones[0].efectos.sabe_nombre (escena 'E2', opción 'investigar'): La variable 'sabe_nombre' usada en 'efectos' no está declarada en 'variables'.
+  [ok] valor_no_booleano_variable: 1. [VALOR_NO_BOOLEANO] variables.conoce_origen: La variable 'conoce_origen' debe tener un valor inicial true o false, pero tiene 0.
+  [ok] valor_no_booleano_condicion: 1. [VALOR_NO_BOOLEANO] escenas[2].opciones[0].condiciones.conoce_origen (escena 'E3', opción 'activar_codigo'): El valor de 'conoce_origen' en 'condiciones' debe ser true o false, pero es "true".
+  [ok] valor_no_booleano_efecto: 1. [VALOR_NO_BOOLEANO] escenas[1].opciones[0].efectos.conoce_origen (escena 'E2', opción 'investigar'): El valor de 'conoce_origen' en 'efectos' debe ser true o false, pero es 1.
+  [ok] final_con_opciones: 1. [OPCIONES_INCOMPATIBLES_CON_FINAL] escenas[3].opciones (escena 'E4'): La escena final 'E4' tiene 1 opción(es); una escena final debe tener cero opciones.
+  [ok] no_final_sin_opciones: 1. [OPCIONES_INCOMPATIBLES_CON_FINAL] escenas[0].opciones (escena 'E1'): La escena 'E1' no es final y no tiene opciones; necesita al menos una.
+
+RNF-03 Confiabilidad: CUMPLE
+  Meta: 1000 secuencias aleatorias de 50 acciones por historia: 0 excepciones no controladas y 0 violaciones de invariantes.
+  La última transmisión: 1000 secuencias x 50 acciones = 50000 acciones ejecutadas; excepciones: 0; violaciones: 0
+    Tipos de acción: {'deshacer': 9958, 'id_cualquiera': 10035, 'reiniciar': 10070, 'texto_aleatorio': 9920, 'valida': 10017}
+    Resultados: {'OK': 15079, 'OPCION_INEXISTENTE': 16187, 'OPCION_NO_HABILITADA': 186, 'PARTIDA_FINALIZADA': 2182, 'SIN_RETROCESO': 6296}
+  El faro de Isla Gris: 1000 secuencias x 50 acciones = 50000 acciones ejecutadas; excepciones: 0; violaciones: 0
+    Tipos de acción: {'deshacer': 9951, 'id_cualquiera': 10021, 'reiniciar': 10070, 'texto_aleatorio': 9926, 'valida': 10032}
+    Resultados: {'OK': 15099, 'OPCION_INEXISTENTE': 14310, 'OPCION_NO_HABILITADA': 237, 'PARTIDA_FINALIZADA': 4203, 'SIN_RETROCESO': 6081}
+
+Resultado global: CUMPLE
