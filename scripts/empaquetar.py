@@ -1,8 +1,9 @@
-"""Construye el ZIP de entrega: Parcial_<ApellidoNombre>_<ApellidoNombre>.zip
+"""Construye el ZIP de entrega: Parcial_<ApellidoNombre>[_<ApellidoNombre>].zip
 
-Uso:
-  python scripts/empaquetar.py --simular PerezLaura GomezAndres   # arma el ZIP en una carpeta temporal, lo revisa y lo borra
-  python scripts/empaquetar.py PerezLaura GomezAndres             # regenera el historial Git y crea el ZIP en la raíz
+Uso (uno o dos autores):
+  python scripts/empaquetar.py --simular PerezLaura               # arma el ZIP en una carpeta temporal, lo revisa y lo borra
+  python scripts/empaquetar.py PerezLaura                         # regenera el historial Git y crea Parcial_PerezLaura.zip
+  python scripts/empaquetar.py PerezLaura GomezAndres             # pareja: Parcial_PerezLaura_GomezAndres.zip
 
 Incluye código, historias, pruebas, scripts, docs (con PDFs), evidencias, README y entrega/video.mp4 si existe.
 Excluye .git, .venv, __pycache__, .pytest_cache, *.pyc y enunciado/.
@@ -116,7 +117,7 @@ def main(argumentos: list[str]) -> int:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     simular = "--simular" in argumentos
     nombres = [a for a in argumentos if a != "--simular"]
-    if len(nombres) != 2:
+    if len(nombres) not in (1, 2):
         print(__doc__)
         return 2
     errores = [e for e in map(validar_nombre, nombres) if e]
@@ -124,7 +125,7 @@ def main(argumentos: list[str]) -> int:
         print("\n".join(errores))
         return 2
 
-    carpeta = f"Parcial_{nombres[0]}_{nombres[1]}"
+    carpeta = "_".join(["Parcial", *nombres])
     if not simular and not regenerar_historial():
         print("Aviso: no se pudo regenerar evidencias/historial_git.txt (¿Git disponible?).")
     archivos = archivos_a_incluir()

@@ -2,10 +2,11 @@
 
 Parcial práctico de Ingeniería de Software. Motor genérico que carga historias desde archivos JSON, valida su contenido, muestra solo las opciones compatibles con lo ocurrido, aplica sus consecuencias y permite reiniciar y deshacer la última elección.
 
-## Integrantes
+## Autor
 
-- [COMPLETAR: nombre completo del integrante 1]
-- [COMPLETAR: nombre completo del integrante 2]
+- [COMPLETAR: nombre completo]
+
+Trabajo **individual** (la guía prevé parejas). [COMPLETAR: indicar si el docente lo autorizó y cómo, p. ej. «autorizado por mensaje en Savio el …»; si no hubo respuesta, decirlo.]
 
 ## Versiones requeridas
 
@@ -145,8 +146,8 @@ Condición visible: en E3 aparece `activar_codigo` solo si se investigó, y `act
 ## Empaquetado de la entrega
 
 ```bash
-python scripts/empaquetar.py --simular ApellidoNombre ApellidoNombre   # revisa sin crear el ZIP
-python scripts/empaquetar.py ApellidoNombre ApellidoNombre             # crea Parcial_<A>_<B>.zip
+python scripts/empaquetar.py --simular ApellidoNombre   # revisa sin crear el ZIP
+python scripts/empaquetar.py ApellidoNombre             # crea Parcial_ApellidoNombre.zip
 ```
 
 ## Limitaciones conocidas

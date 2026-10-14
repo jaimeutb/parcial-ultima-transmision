@@ -6,8 +6,8 @@
 
 | | |
 |---|---|
-| Integrante 1 | [COMPLETAR: nombre completo] |
-| Integrante 2 | [COMPLETAR: nombre completo] |
+| Autor | [COMPLETAR: nombre completo] |
+| Modalidad | Individual; la guía prevé parejas. [COMPLETAR: motivo y si el docente lo autorizó (medio y fecha).] |
 | Curso / grupo | [COMPLETAR] |
 | Docente | [COMPLETAR] |
 | Apertura y cierre del parcial | [COMPLETAR: fecha y horas] |
@@ -39,11 +39,11 @@
 
 **Actividades en esta entrega.** *Especificación*: RF/RNF con criterios Dado/Cuando/Entonces y preguntas (`docs/requisitos.md`). *Desarrollo*: commits pequeños que citan RF o pruebas. *Validación*: 148 pruebas automatizadas, verificación de RNF y recorridos manuales para el video. *Evolución*: solicitud de cambio analizada en `docs/analisis_impacto_cambio.md` y entregada como `v2-cambio`.
 
-**Prácticas ágiles.** Utilizadas: (1) **backlog priorizado y tablero** con responsables (`docs/backlog.md`, capturas en el anexo); (2) **desarrollo guiado por pruebas de aceptación**: los CA01–CA03 y el ejemplo del docente se convirtieron en pruebas antes de dar el ítem por terminado. [COMPLETAR/confirmar] **Descartada:** *programación en pareja continua* / *reuniones diarias* [elegir la que realmente descartaron] porque [COMPLETAR].
+**Prácticas ágiles.** Utilizadas: (1) **backlog priorizado y tablero** con responsables (`docs/backlog.md`, capturas en el anexo); (2) **desarrollo guiado por pruebas de aceptación**: los CA01–CA03 y el ejemplo del docente se convirtieron en pruebas antes de dar el ítem por terminado. [COMPLETAR/confirmar] **Descartada:** [COMPLETAR/confirmar] *programación en pareja*, porque el trabajo fue individual; la revisión se sustituyó por pruebas automatizadas y una segunda lectura de los requisitos (ver §4).
 
 **Definición de terminado.** Ver `docs/backlog.md` (7 criterios: RF con aceptación, motor sin datos de historias, pruebas pasando, sin tracebacks, documentos coherentes, commit pequeño).
 
-**Aprendizaje y acción de mejora.** [COMPLETAR: un aprendizaje real del equipo y la acción concreta de mejora. Sugerencia a confirmar o reemplazar: «Una mutación manual mostró que ninguna prueba cubría elegir en un final antes de deshacer; acción: para cada regla nueva, comprobar que alguna prueba falla si se rompe la regla».]
+**Aprendizaje y acción de mejora.** [COMPLETAR: un aprendizaje real y la acción concreta de mejora. Sugerencia a confirmar o reemplazar: «Una mutación manual mostró que ninguna prueba cubría elegir en un final antes de deshacer; acción: para cada regla nueva, comprobar que alguna prueba falla si se rompe la regla».]
 
 ## 4. Requisitos
 
@@ -53,7 +53,7 @@
 
 **Preguntas.** P1 retroceso (acuerdo provisional, resuelto por el cambio), P2 formato (supuesto: JSON), P3 escena sin opciones habilitadas (supuesto: informar y permitir reiniciar). [COMPLETAR: respuestas recibidas, si las hubo.]
 
-**Defecto detectado en revisión cruzada.** [COMPLETAR: resumen del defecto real y su corrección; ver `docs/requisitos.md` §6.]
+**Defecto detectado en revisión.** Al ser un trabajo individual no hubo revisión entre integrantes; se hizo una revisión propia en una segunda pasada. [COMPLETAR: resumen del defecto real y su corrección; ver `docs/requisitos.md` §6.]
 
 ## 5. Modelos
 
@@ -88,14 +88,13 @@ Fuente: `evidencias/resultados_pruebas.txt` (pytest 9.1.1, Python 3.10.11). RNF:
 
 La solicitud de la hora 6 reemplazó el acuerdo «sin retroceso» por **deshacer la última elección válida**. Versión de partida `v1-inicial` (`10dfc3a`, 2026-10-15 05:52:29 +0700); versión final `v2-cambio` (`bef51ab`). Impacto: RF17 nuevo y RF06/RF08/RF09/RF16 ampliados; modelos de clases, secuencia, estados y casos de uso; componentes `sesion.py` (+23/−1) y `cli.py` (+9/−1); pruebas U6 nuevas y U5/I1 extendidas; backlog B13–B17; trazabilidad RF17. Las 95 pruebas de la versión inicial siguen pasando sin cambios en sus aserciones. Detalle y riesgos en `docs/analisis_impacto_cambio.md`.
 
-## 9. Aportes por integrante
+## 9. Aportes
 
-[COMPLETAR con información real, vinculada a commits (`evidencias/historial_git.txt`), archivos o ítems del backlog. Ejemplo de formato:]
+Trabajo individual: todos los commits de `evidencias/historial_git.txt` (autor `jaimeutb`) corresponden al único autor, con apoyo de Claude Code declarado en §10.
 
-| Integrante | Aportes | Commits / archivos |
+| Autor | Trabajo propio | Generado con IA y verificado |
 |---|---|---|
-| [COMPLETAR] | [COMPLETAR] | [COMPLETAR: hashes] |
-| [COMPLETAR] | [COMPLETAR] | [COMPLETAR: hashes] |
+| [COMPLETAR: nombre] | [COMPLETAR: lo que hizo personalmente, p. ej. redactar el prompt, revisar requisitos, tablero, video, decisiones de las preguntas, revisión de código] | código, pruebas y borradores (ver §10), verificados mediante [COMPLETAR] |
 
 ## 10. Fuentes y herramientas
 
@@ -104,6 +103,6 @@ La solicitud de la hora 6 reemplazó el acuerdo «sin retroceso» por **deshacer
 | Python 3.10 y su biblioteca estándar | lenguaje, `json`, `dataclasses`, `zipfile`, `subprocess` | PSF License |
 | pytest 9.1.1 (y dependencias: pluggy, iniconfig, packaging, colorama, exceptiongroup, tomli, Pygments) | pruebas automatizadas | MIT / BSD / Apache-2.0 |
 | Mermaid | sintaxis de los diagramas | MIT |
-| Claude Code (Anthropic), herramienta de IA | Generó a partir de un prompt del equipo (`PROMPT_CLAUDE_CODE.md`): estructura y código del motor, segunda historia, pruebas, scripts de verificación y empaquetado, y borradores de estos documentos. | servicio de IA |
+| Claude Code (Anthropic), herramienta de IA | Generó a partir de un prompt del autor (`PROMPT_CLAUDE_CODE.md`): estructura y código del motor, segunda historia, pruebas, scripts de verificación y empaquetado, y borradores de estos documentos. | servicio de IA |
 
 **Cómo verificamos los resultados de la IA.** [COMPLETAR con detalles verídicos: qué revisaron línea a línea, qué ejecutaron, qué corrigieron o rechazaron.] Verificaciones reproducibles que ya constan en el repositorio: ejecución completa de pytest (148 pasan), `scripts/verificar_rnf.py`, recorridos manuales de los tres finales y de la segunda historia (video), y comparación del archivo oficial copiado con el original (idénticos byte a byte). El código del motor no reutiliza fragmentos de tutoriales externos. [COMPLETAR: otras fuentes consultadas, si las hubo.]
