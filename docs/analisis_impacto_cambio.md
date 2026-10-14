@@ -7,11 +7,13 @@ Solicitud transcrita en [solicitud_cambio.md](solicitud_cambio.md).
 | Dato | Valor |
 |---|---|
 | Etiqueta | `v1-inicial` (anotada) |
-| Commit | `8f6c941` (`8f6c94183608be25391ffb82135e3966692f3608`) |
+| Commit | `10dfc3a` (`10dfc3a14f66f8238589d02c8f935fc5369770a1`) |
 | Fecha real del commit y de la etiqueta | 2026-10-15 05:52:29 +0700 |
 | Contenido | Motor completo sin retroceso: carga, validación (10 códigos), sesión, CLI, segunda historia, pruebas U1–U5, I1, bloqueo y CLI (95 pruebas, todas pasan en ese commit). |
 
-**Declaración honesta sobre esta etiqueta.** El repositorio se creó con `git init` en esta misma sesión de trabajo; antes no había código. La versión inicial se construyó con ayuda de Claude Code siguiendo el alcance inicial (sin retroceso) y se etiquetó `v1-inicial` en la fecha real indicada arriba, **sin modificar fechas**. El texto de la solicitud de cambio ya estaba disponible en el prompt usado, pero no se incorporó nada de ella antes de la etiqueta: `docs/solicitud_cambio.md` y todo el código de deshacer se agregaron en commits posteriores (`039d70c` en adelante).
+**Declaración honesta sobre esta etiqueta.** El repositorio se creó con `git init` en esta misma sesión de trabajo; antes no había código. La versión inicial se construyó con ayuda de Claude Code siguiendo el alcance inicial (sin retroceso) y se etiquetó `v1-inicial` en la fecha real indicada arriba, **sin modificar fechas**. El texto de la solicitud de cambio ya estaba disponible en el prompt usado, pero no se incorporó nada de ella antes de la etiqueta: `docs/solicitud_cambio.md` y todo el código de deshacer se agregaron en commits posteriores (`7cc7050` en adelante).
+**Cambio de identidad en el historial.** Los commits se crearon originalmente con la identidad Git global del equipo usado (`workaumz-debug`). Antes del primer `push`, el autor y el committer de los 17 commits se reescribieron a `jaimeutb <eudonemia@gmail.com>` con `git filter-branch --env-filter`, **conservando las fechas, los mensajes y el contenido** (mismo árbol de archivos). Por eso cambiaron los hashes; los que aparecen en este documento son los nuevos. Las etiquetas se recrearon apuntando a los commits reescritos con su fecha original.
+
 [COMPLETAR: si al recibir la solicitud a la hora 6 tenían otra versión (en otro repositorio, carpeta o máquina), indicarlo aquí con su fecha real; si no, confirmar que `v1-inicial` es la versión de partida y a qué hora del parcial (hora de apertura + N) se creó.]
 
 ## 2. Versión resultante
@@ -19,9 +21,9 @@ Solicitud transcrita en [solicitud_cambio.md](solicitud_cambio.md).
 | Dato | Valor |
 |---|---|
 | Etiqueta | `v2-cambio` (anotada) |
-| Commit | `4340385` (`4340385fe83ff6a95b9c8ae82093933ee9fc53fa`) |
+| Commit | `bef51ab` (`bef51ab724212ebc64c1f2e3bf5a1c4fd66421fe`) |
 | Fecha real | 2026-10-15 05:56:42 +0700 |
-| Commits del cambio | `039d70c` solicitud · `552e82b` RF17 sesión · `9b0ab85` RF17 CLI · `4d65c98` pruebas U6/U5/I1 · `4e66df4` RNF · `4340385` evidencias |
+| Commits del cambio | `7cc7050` solicitud · `8a8b6bb` RF17 sesión · `af81416` RF17 CLI · `78afafc` pruebas U6/U5/I1 · `bc96563` RNF · `bef51ab` evidencias |
 
 `git diff --stat v1-inicial v2-cambio -- motor/`: `motor/sesion.py` +23/−1, `motor/cli.py` +9/−1. Sin cambios en `modelo.py`, `validador.py`, `cargador.py` ni en las historias.
 

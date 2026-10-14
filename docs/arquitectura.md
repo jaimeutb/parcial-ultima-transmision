@@ -52,7 +52,7 @@ Las dependencias van en un solo sentido (de la interfaz hacia el modelo); el mod
 - **Contenido** (`historias/`): todo lo específico de un relato — IDs, textos, variables, condiciones, efectos — está en JSON.
 - **Reglas** (`modelo.py`, `sesion.py`, `validador.py`): interpretan cualquier historia que cumpla el contrato. No contienen ningún ID de escena/opción ni nombre de variable: lo comprueba `tests/test_rnf.py::test_RNF01_el_motor_no_contiene_ids_ni_variables_de_las_historias`.
 - **Interfaz** (`cli.py`): solo traduce entre el teclado y la `Sesion`.
-- **Demostración**: `historias/el_faro.json` (5 escenas, IDs `faro_*`, variables `tiene_llave` y `lampara_encendida`, 2 condiciones, 3 efectos, 2 finales) se agregó en el commit `67cbe1e` sin cambiar ninguna línea de `motor/` (medido por `scripts/verificar_rnf.py`) y se juega hasta todos sus finales (`test_RNF01_todos_los_finales_son_alcanzables_con_el_mismo_motor`, `test_I1_segunda_historia_*`).
+- **Demostración**: `historias/el_faro.json` (5 escenas, IDs `faro_*`, variables `tiene_llave` y `lampara_encendida`, 2 condiciones, 3 efectos, 2 finales) se agregó en el commit `7688ab1` sin cambiar ninguna línea de `motor/` (medido por `scripts/verificar_rnf.py`) y se juega hasta todos sus finales (`test_RNF01_todos_los_finales_son_alcanzables_con_el_mismo_motor`, `test_I1_segunda_historia_*`).
 
 ## 4. Decisión de diseño detallado: `Sesion` sin entrada/salida
 

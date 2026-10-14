@@ -127,8 +127,8 @@ Condición visible: en E3 aparece `activar_codigo` solo si se investigó, y `act
 
 | Etiqueta | Contenido |
 |---|---|
-| `v1-inicial` | Versión sin retroceso, previa a la solicitud de cambio (`8f6c941`, 2026-10-15 05:52 +0700). |
-| `v2-cambio` | Deshacer implementado y probado (`4340385`, 2026-10-15 05:56 +0700). |
+| `v1-inicial` | Versión sin retroceso, previa a la solicitud de cambio (`10dfc3a`, 2026-10-15 05:52 +0700). |
+| `v2-cambio` | Deshacer implementado y probado (`bef51ab`, 2026-10-15 05:56 +0700). |
 
 `git log --all --decorate` o `evidencias/historial_git.txt` muestran el historial completo.
 

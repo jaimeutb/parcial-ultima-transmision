@@ -86,7 +86,7 @@ Fuente: `evidencias/resultados_pruebas.txt` (pytest 9.1.1, Python 3.10.11). RNF:
 
 ## 8. Cambio e impacto
 
-La solicitud de la hora 6 reemplazó el acuerdo «sin retroceso» por **deshacer la última elección válida**. Versión de partida `v1-inicial` (`8f6c941`, 2026-10-15 05:52:29 +0700); versión final `v2-cambio` (`4340385`). Impacto: RF17 nuevo y RF06/RF08/RF09/RF16 ampliados; modelos de clases, secuencia, estados y casos de uso; componentes `sesion.py` (+23/−1) y `cli.py` (+9/−1); pruebas U6 nuevas y U5/I1 extendidas; backlog B13–B17; trazabilidad RF17. Las 95 pruebas de la versión inicial siguen pasando sin cambios en sus aserciones. Detalle y riesgos en `docs/analisis_impacto_cambio.md`.
+La solicitud de la hora 6 reemplazó el acuerdo «sin retroceso» por **deshacer la última elección válida**. Versión de partida `v1-inicial` (`10dfc3a`, 2026-10-15 05:52:29 +0700); versión final `v2-cambio` (`bef51ab`). Impacto: RF17 nuevo y RF06/RF08/RF09/RF16 ampliados; modelos de clases, secuencia, estados y casos de uso; componentes `sesion.py` (+23/−1) y `cli.py` (+9/−1); pruebas U6 nuevas y U5/I1 extendidas; backlog B13–B17; trazabilidad RF17. Las 95 pruebas de la versión inicial siguen pasando sin cambios en sus aserciones. Detalle y riesgos en `docs/analisis_impacto_cambio.md`.
 
 ## 9. Aportes por integrante
 
