@@ -43,10 +43,10 @@ def _booleano(valor: bool) -> str:
 
 
 class Consola:
-    def __init__(self, sesion: Sesion, entrada: Entrada = input, salida: Salida = print):
+    def __init__(self, sesion: Sesion, entrada: Entrada | None = None, salida: Salida | None = None):
         self.sesion = sesion
-        self.entrada = entrada
-        self.salida = salida
+        self.entrada = entrada or input
+        self.salida = salida or print
 
     def comandos_disponibles(self) -> str:
         return "r reiniciar, q salir"
@@ -141,7 +141,8 @@ def cargar_o_informar(ruta: str, salida: Salida = print) -> Historia | None:
         return None
 
 
-def elegir_historia(entrada: Entrada = input, salida: Salida = print) -> str | None:
+def elegir_historia(entrada: Entrada | None = None, salida: Salida = print) -> str | None:
+    entrada = entrada or input
     carpeta = Path("historias")
     disponibles = sorted(carpeta.glob("*.json")) if carpeta.is_dir() else []
     if not disponibles:
@@ -188,7 +189,7 @@ def _ejecutar(argumentos: list[str]) -> int:
     return Consola(Sesion(historia)).ejecutar()
 
 
-def _configurar_salida() -> None:
+def configurar_salida() -> None:
     # UTF-8 en consola, tuberías y archivos; nunca falla por un carácter no representable.
     for flujo in (sys.stdout, sys.stderr):
         try:
@@ -198,7 +199,6 @@ def _configurar_salida() -> None:
 
 
 def main(argumentos: list[str] | None = None) -> int:
-    _configurar_salida()
     try:
         return _ejecutar(sys.argv[1:] if argumentos is None else argumentos)
     except KeyboardInterrupt:
