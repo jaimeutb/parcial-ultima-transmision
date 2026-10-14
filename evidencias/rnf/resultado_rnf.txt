@@ -1,5 +1,5 @@
 Verificación de requisitos no funcionales
-Fecha: 2026-10-15T05:56:18+07:00
+Fecha: 2026-10-15T06:05:35+07:00
 Python: 3.10.11 (Windows 10)
 Comando: python scripts/verificar_rnf.py   Semilla RNF-03: 20261015
 

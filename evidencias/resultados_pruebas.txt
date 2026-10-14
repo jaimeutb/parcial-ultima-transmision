@@ -1,5 +1,5 @@
 Registro de la última ejecución de pruebas automatizadas
-Fecha: 2026-10-15T05:56:35+07:00
+Fecha: 2026-10-15T06:05:33+07:00
 Python: 3.10.11 (Windows 10)
 pytest: 9.1.1
 Comando: python -m pytest -v
@@ -161,4 +161,4 @@ tests/test_validacion.py::test_U4_valores_parecidos_a_booleanos_se_rechazan[None
 tests/test_validacion.py::test_U4_historias_validas_no_producen_errores[oficial] PASSED [ 99%]
 tests/test_validacion.py::test_U4_historias_validas_no_producen_errores[el_faro] PASSED [100%]
 
-============================= 148 passed in 2.74s =============================
+============================= 148 passed in 2.79s =============================
