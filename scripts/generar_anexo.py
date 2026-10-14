@@ -4,10 +4,29 @@ Uso:  python scripts/generar_anexo.py   (ejecutarlo de nuevo si cambian modelos,
 """
 from __future__ import annotations
 
+import datetime as dt
 import re
 from pathlib import Path
 
 DOCS = Path(__file__).resolve().parent.parent / "docs"
+TABLERO = DOCS.parent / "evidencias" / "tablero"
+CAPTURAS = [("tablero_inicial", "Captura inicial"), ("tablero_final", "Captura final")]
+NOTA_TABLERO = (
+    "Tablero en Trello con los ítems de `docs/backlog.md` (trabajo individual: todas las tarjetas a cargo del autor). "
+    "El tablero se creó al final del trabajo, a partir del backlog: la captura inicial muestra el estado de partida "
+    "**reconstruido** (todos los ítems en «Por hacer»), no una captura tomada al comenzar el parcial. "
+    "Las fechas indicadas son las de los archivos de captura."
+)
+
+
+def seccion_captura(nombre: str) -> str:
+    """Inserta la captura si existe (png/jpg) con su fecha de archivo; si no, deja el marcador pendiente."""
+    for extension in (".png", ".jpg", ".jpeg"):
+        ruta = TABLERO / f"{nombre}{extension}"
+        if ruta.exists():
+            fecha = dt.datetime.fromtimestamp(ruta.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
+            return f"![{nombre}](../evidencias/tablero/{ruta.name})\n\n*Archivo `{ruta.name}`, capturado el {fecha}.*"
+    return f"[COMPLETAR: guardar `evidencias/tablero/{nombre}.png` y volver a ejecutar este script]"
 
 
 def bloques_mermaid(texto: str) -> list[tuple[str, str]]:
@@ -38,14 +57,10 @@ def main() -> None:
         partes += ["", f"### A.{numero} {re.sub(r'^[0-9]+[.] ', '', titulo)}", "", bloque]
     partes += ["", "## B. Arquitectura: componentes y capas", "", arquitectura[0][1]]
     partes += ["", "## C. Matriz de trazabilidad", matriz.strip().replace("\n## ", "\n### C. ")]
-    partes += [
-        "", "## D. Tablero",
-        "", "### D.1 Captura inicial",
-        "", "[COMPLETAR: insertar `evidencias/tablero/tablero_inicial.png` (fecha y hora visibles)]",
-        "", "### D.2 Captura final",
-        "", "[COMPLETAR: insertar `evidencias/tablero/tablero_final.png` (fecha y hora visibles)]",
-        "",
-    ]
+    partes += ["", "## D. Tablero", "", NOTA_TABLERO]
+    for numero, (archivo, titulo) in enumerate(CAPTURAS, start=1):
+        partes += ["", f"### D.{numero} {titulo}", "", seccion_captura(archivo)]
+    partes.append("")
     (DOCS / "anexo.md").write_text("\n".join(partes), encoding="utf-8")
     print("docs/anexo.md generado")
 

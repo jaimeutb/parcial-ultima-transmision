@@ -8,7 +8,7 @@ Los ítems marcados **🕕 hora 6** se agregaron al recibir la solicitud de camb
 |---|---|---|---|---|---|---|
 | B01 | Definir problema, actores, alcance, riesgos y atributos de calidad | — | A | Autor | Borrador | `docs/informe.md` §2 |
 | B02 | Redactar RF (N01–N06), RNF y preguntas | RF01–RF16, RNF-01..03 | A | Autor | Hecho (borrador a revisar) | `docs/requisitos.md` |
-| B03 | Revisión cruzada de requisitos y registro del defecto | — | A | Autor | Pendiente | `docs/requisitos.md` §6 |
+| B03 | Revisión de requisitos en segunda pasada y registro del defecto | — | A | Autor | Pendiente | `docs/requisitos.md` §6 |
 | B04 | Modelos: contexto, casos de uso, clases, secuencia, estados | — | A | Autor | Hecho | `docs/modelos.md` |
 | B05 | Arquitectura y dos decisiones | — | A | Autor | Hecho | `docs/arquitectura.md` |
 | B06 | Modelo inmutable y cargador con errores controlados | RF01, RF10 | A | Autor | Hecho | `motor/modelo.py`, `motor/cargador.py` |
@@ -25,8 +25,8 @@ Los ítems marcados **🕕 hora 6** se agregaron al recibir la solicitud de camb
 | B17 🕕 hora 6 | Actualizar trazabilidad y backlog | RF17 | A | Autor | Hecho | `docs/trazabilidad.md` |
 | B18 | Verificación de RNF con script reproducible | RNF-01..03 | A | Autor | Hecho | `scripts/verificar_rnf.py`, `evidencias/rnf/` |
 | B19 | README con instalación, ejecución, formato y rutas | — | A | Autor | Hecho (faltan nombres y enlace) | `README.md` |
-| B20 | Informe y anexo en PDF | — | A | Autor | Pendiente (exportar) | `docs/informe.md`, `docs/anexo.md` |
-| B21 | Capturas del tablero inicial y final | — | A | Autor | Pendiente | `evidencias/tablero/` |
+| B20 | Informe y anexo en PDF | — | A | Autor | En curso (PDF generados con `scripts/generar_pdfs.py`; faltan los [COMPLETAR]) | `docs/informe.md`, `docs/anexo.md` |
+| B21 | Tablero en Trello y capturas inicial y final | — | A | Autor | En curso | `evidencias/tablero/` |
 | B22 | Video de demostración ≤ 6 min | — | A | Autor | Pendiente | `entrega/video.mp4` o enlace en README |
 | B23 | Empaquetar ZIP y subirlo a Savio | — | A | Autor | Pendiente | `scripts/empaquetar.py` |
 | B24 | Comando `e`/estado para ver variables en la demostración | RF07 | B | Autor | Hecho | `motor/cli.py::Consola.mostrar_estado` |

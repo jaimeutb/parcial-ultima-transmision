@@ -1,0 +1,25 @@
+B01 · Definir problema, actores, alcance, riesgos y atributos de calidad · prioridad A
+B02 · Redactar RF (N01–N06), RNF y preguntas (RF01–RF16, RNF-01..03) · prioridad A
+B03 · Revisión de requisitos en segunda pasada y registro del defecto · prioridad A
+B04 · Modelos: contexto, casos de uso, clases, secuencia, estados · prioridad A
+B05 · Arquitectura y dos decisiones · prioridad A
+B06 · Modelo inmutable y cargador con errores controlados (RF01, RF10) · prioridad A
+B07 · Validador con los 10 códigos de error (RF10–RF15) · prioridad A
+B08 · Sesión: condiciones, efectos, rechazo, finales, reinicio, bloqueo (RF02, RF04–RF09, RF16) · prioridad A
+B09 · Interfaz de consola y --validar (RF03, RF15) · prioridad A
+B10 · Segunda historia sin cambiar el motor (RNF-01) · prioridad A
+B11 · Pruebas U1–U5, I1 y bloqueo · prioridad A
+B12 · Guardar versión inicial (v1-inicial) · prioridad A
+B13 [hora 6] · Analizar el impacto de la solicitud de cambio (RF17) · prioridad A
+B14 [hora 6] · Redactar RF17 y actualizar requisitos y modelos (RF17) · prioridad A
+B15 [hora 6] · Implementar deshacer (sesión + CLI) (RF17) · prioridad A
+B16 [hora 6] · Pruebas U6 y extensiones de U5 e I1 (RF17) · prioridad A
+B17 [hora 6] · Actualizar trazabilidad y backlog (RF17) · prioridad A
+B18 · Verificación de RNF con script reproducible (RNF-01..03) · prioridad A
+B19 · README con instalación, ejecución, formato y rutas · prioridad A
+B20 · Informe y anexo en PDF · prioridad A
+B21 · Tablero en Trello y capturas inicial y final · prioridad A
+B22 · Video de demostración ≤ 6 min · prioridad A
+B23 · Empaquetar ZIP y subirlo a Savio · prioridad A
+B24 · Comando e/estado para ver variables en la demostración (RF07) · prioridad B
+B25 · Menú para elegir historia si no se pasa ruta (RF01) · prioridad B

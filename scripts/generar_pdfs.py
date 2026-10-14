@@ -38,10 +38,11 @@ th { background: #e8e8e8; } tr { page-break-inside: avoid; }
 code { font-family: Consolas, monospace; font-size: 8.8pt; background: #f2f2f2; padding: 0 2px; word-break: break-word; }
 blockquote { margin: 4pt 0; padding: 2pt 8pt; border-left: 3px solid #aaa; color: #444; }
 pre.mermaid { text-align: center; page-break-inside: avoid; background: none; }
+img { max-width: 100%; max-height: 120mm; display: block; margin: 4pt auto; border: 1px solid #ccc; }
 .completar { background: #fff3a0; }
 """
 
-PLANTILLA = """<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{titulo}</title>
+PLANTILLA = """<!doctype html><html lang="es"><head><meta charset="utf-8"><base href="{base}"><title>{titulo}</title>
 <style>{estilo}</style></head><body>{cuerpo}
 <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 <script>
@@ -65,7 +66,7 @@ def a_html(texto: str, titulo: str) -> str:
     for i, bloque in enumerate(bloques):
         cuerpo = cuerpo.replace(f"<p>MERMAID{i}FIN</p>", f'<pre class="mermaid">{html.escape(bloque)}</pre>')
     cuerpo = re.sub(r"(\[COMPLETAR[^\]]*\])", r'<span class="completar">\1</span>', cuerpo)
-    return PLANTILLA.format(titulo=html.escape(titulo), estilo=ESTILO, cuerpo=cuerpo)
+    return PLANTILLA.format(titulo=html.escape(titulo), estilo=ESTILO, cuerpo=cuerpo, base=DOCS.as_uri() + "/")
 
 
 def buscar_navegador() -> str | None:

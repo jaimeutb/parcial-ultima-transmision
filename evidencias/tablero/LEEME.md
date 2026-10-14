@@ -1,13 +1,18 @@
 # Capturas del tablero
 
-Coloquen aquí las capturas reales de su tablero (Trello, GitHub Projects, Jira, Notion, papel fotografiado…).
-Deben coincidir con `docs/backlog.md` y mostrar responsables.
+Tablero en Trello creado a partir de `docs/backlog.md`. Las tarjetas están en `tarjetas_trello.txt`
+(una por línea; al pegarlas en «Añadir una tarjeta», Trello ofrece crear una tarjeta por línea).
 
-| Archivo | Contenido requerido |
+| Archivo | Contenido |
 |---|---|
-| `tablero_inicial.png` | Tablero al comenzar: ítems del backlog en «Por hacer», con responsable. Fecha/hora visibles. |
-| `tablero_final.png` | Tablero al cerrar: ítems terminados, incluidos los agregados en la hora 6 (B13–B17), con responsable. Fecha/hora visibles. |
-| `tablero_hora6.png` (opcional) | Tablero al recibir la solicitud de cambio, con los ítems nuevos. |
+| `tablero_inicial.png` | Estado de partida reconstruido: todas las tarjetas en «Por hacer», con responsable y etiqueta «Hora 6» en B13–B17. Reloj del sistema visible. |
+| `tablero_final.png` | Estado real al cerrar: tarjetas en «Hecho» / «En curso» / «Por hacer» según `docs/backlog.md`. Reloj del sistema visible. |
 
-Después, insértenlas en la sección D de `docs/anexo.md` antes de exportar el anexo a PDF.
-`python scripts/empaquetar.py --simular …` avisa si faltan.
+El tablero se creó al final del trabajo; el anexo lo declara así y muestra la fecha de cada archivo.
+
+Después de guardar las capturas:
+
+```bash
+python scripts/generar_anexo.py
+python scripts/generar_pdfs.py
+```

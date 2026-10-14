@@ -244,10 +244,12 @@ Pruebas como `archivo::función` dentro de `tests/`. Evidencia común de ejecuci
 
 ## D. Tablero
 
+Tablero en Trello con los ítems de `docs/backlog.md` (trabajo individual: todas las tarjetas a cargo del autor). El tablero se creó al final del trabajo, a partir del backlog: la captura inicial muestra el estado de partida **reconstruido** (todos los ítems en «Por hacer»), no una captura tomada al comenzar el parcial. Las fechas indicadas son las de los archivos de captura.
+
 ### D.1 Captura inicial
 
-[COMPLETAR: insertar `evidencias/tablero/tablero_inicial.png` (fecha y hora visibles)]
+[COMPLETAR: guardar `evidencias/tablero/tablero_inicial.png` y volver a ejecutar este script]
 
 ### D.2 Captura final
 
-[COMPLETAR: insertar `evidencias/tablero/tablero_final.png` (fecha y hora visibles)]
+[COMPLETAR: guardar `evidencias/tablero/tablero_final.png` y volver a ejecutar este script]
