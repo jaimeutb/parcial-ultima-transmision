@@ -25,10 +25,12 @@ COMANDOS = {
     "q": "salir", "salir": "salir",
     "?": "ayuda", "ayuda": "ayuda",
     "e": "estado", "estado": "estado",
+    "d": "deshacer", "deshacer": "deshacer",
 }
 
 AYUDA = """Comandos:
   <número> o <id>   elegir una de las opciones mostradas
+  d, deshacer       deshacer la última elección (solo un nivel)
   e, estado         ver las variables de la partida
   r, reiniciar      empezar la historia desde el inicio
   ?, ayuda          mostrar esta ayuda
@@ -49,7 +51,7 @@ class Consola:
         self.salida = salida or print
 
     def comandos_disponibles(self) -> str:
-        return "r reiniciar, q salir"
+        return "d deshacer, r reiniciar, q salir" if self.sesion.puede_deshacer else "r reiniciar, q salir"
 
     def mostrar_escena(self) -> None:
         escena = self.sesion.escena_actual
@@ -67,6 +69,8 @@ class Consola:
         else:
             for numero, opcion in enumerate(self.sesion.opciones_habilitadas(), start=1):
                 self.salida(f"  {numero}) {opcion.texto}  [{opcion.id}]")
+            if self.sesion.puede_deshacer:
+                self.salida("  (d para deshacer la última elección)")
 
     def mostrar_estado(self) -> None:
         for nombre, valor in self.sesion.variables.items():
@@ -80,6 +84,10 @@ class Consola:
             self.sesion.reiniciar()
             self.salida("Partida reiniciada.")
             return True, True
+        if comando == "deshacer":
+            resultado = self.sesion.deshacer()
+            self.salida(resultado.mensaje)
+            return True, resultado.ok
         if comando == "estado":
             self.mostrar_estado()
             return True, False
