@@ -1,0 +1,18 @@
+bf3962a | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:21:01 +0700 |  (HEAD -> main) Docs: actualizar hashes tras reescribir la identidad del autor antes del primer push
+60a506d | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:05:36 +0700 |  Entrega: script de empaquetado con simulación, guía de capturas y evidencias actualizadas
+33c7cbb | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:04:39 +0700 |  Docs: README, backlog con DoD, borrador del informe y anexo generado
+564cf2e | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:02:27 +0700 |  Docs: requisitos (RF01-RF17, RNF), modelos, arquitectura, impacto y trazabilidad
+bef51ab | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:56:42 +0700 |  (tag: v2-cambio) Evidencias: resultados de pytest (148 pasan) y de la verificación de RNF
+bc96563 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:56:42 +0700 |  RNF-01, RNF-02, RNF-03: verificación automatizada y script de evidencias
+78afafc | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:54:21 +0700 |  U6, U5/I1 extendidos: pruebas de deshacer según la solicitud de cambio
+af81416 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:53:06 +0700 |  RF17: comando d/deshacer en la CLI, visible solo cuando puede_deshacer
+8a8b6bb | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:53:06 +0700 |  RF17: deshacer restaura escena y variables con una única instantánea (U6)
+7cc7050 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:52:43 +0700 |  Solicitud de cambio recibida: transcripción en docs/solicitud_cambio.md
+10dfc3a | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:52:29 +0700 |  (tag: v1-inicial) U1-U5, I1: pruebas de la versión inicial, validación parametrizada y bloqueo
+13d266e | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:52:29 +0700 |  RF15: la CLI resuelve input en tiempo de ejecución y configura UTF-8 solo al arrancar
+7688ab1 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:52:29 +0700 |  RNF-01: segunda historia «El faro de Isla Gris» (5 escenas, 2 finales)
+0fd7b82 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:49:49 +0700 |  N01: historia oficial y fixture inválido con destino E99 (CA03)
+9afa0f6 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:49:49 +0700 |  RF03, RF15: interfaz de consola y modo --validar sin tracebacks
+7bca285 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:49:48 +0700 |  RF02-RF09, RF16: sesión con condiciones, efectos, rechazo de entradas y reinicio
+cf8f71d | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:49:48 +0700 |  RF01, RF10-RF15: modelo inmutable, cargador y validador con 10 códigos de error
+7d47385 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 05:47:05 +0700 |  Material inicial: guía del parcial, historia oficial y prompt de apoyo
