@@ -1,7 +1,7 @@
 """Pruebas unitarias de las reglas de la sesión: U1, U2, U3, U5 y bloqueo."""
 import pytest
 
-from motor.sesion import OK, OPCION_INEXISTENTE, OPCION_NO_HABILITADA, PARTIDA_FINALIZADA, Sesion
+from motor.sesion import OK, OPCION_INEXISTENTE, OPCION_NO_HABILITADA, PARTIDA_FINALIZADA, SIN_RETROCESO, Sesion
 from tests.apoyo import estado, historia_en_memoria, ids, nueva_escena, nueva_opcion, sesion_oficial
 
 INICIAL = {"conoce_origen": False, "confia_en_la_voz": False}
@@ -165,6 +165,20 @@ def test_U5_reiniciar_no_conserva_informacion_de_la_partida_anterior():
     assert ids(sesion.opciones_habilitadas()) == ["activar_sin_verificar", "cortar"]
 
 
+@pytest.mark.parametrize("pasos", [["revisar"], ["revisar", "investigar"], ["revisar", "investigar", "activar_codigo"]])
+def test_U5_extendido_reiniciar_elimina_el_historial_de_deshacer(pasos):
+    """Entrada (cambio): avanzar con `pasos` (hay retroceso disponible) y reiniciar.
+    Esperado: puede_deshacer falso, deshacer devuelve SIN_RETROCESO y el estado sigue siendo el inicial."""
+    sesion = sesion_oficial()
+    for paso in pasos:
+        sesion.elegir(paso)
+    assert sesion.puede_deshacer
+    sesion.reiniciar()
+    assert not sesion.puede_deshacer
+    assert sesion.deshacer().codigo == SIN_RETROCESO
+    assert estado(sesion) == ("E1", INICIAL)
+
+
 # ----------------------------------------------------------- Bloqueo -------
 
 def historia_con_bloqueo():
@@ -195,5 +209,15 @@ def test_bloqueo_reiniciar_sale_del_bloqueo():
     sesion = Sesion(historia_con_bloqueo())
     sesion.elegir("pasar")
     sesion.reiniciar()
+    assert estado(sesion) == ("entrada", {"llave": False})
+    assert not sesion.esta_bloqueada
+
+
+def test_bloqueo_deshacer_vuelve_a_la_escena_anterior():
+    """Entrada (cambio): sesión bloqueada en 'puerta' y deshacer. Esperado: vuelve a 'entrada' sin bloqueo."""
+    sesion = Sesion(historia_con_bloqueo())
+    sesion.elegir("pasar")
+    assert sesion.esta_bloqueada and sesion.puede_deshacer
+    assert sesion.deshacer().codigo == OK
     assert estado(sesion) == ("entrada", {"llave": False})
     assert not sesion.esta_bloqueada

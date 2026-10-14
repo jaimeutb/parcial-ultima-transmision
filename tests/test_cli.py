@@ -70,6 +70,27 @@ def test_cli_informa_bloqueo_y_permite_reiniciar():
     assert sesion.escena_actual.id == "entrada"
 
 
+def test_cli_deshacer_solo_se_ofrece_cuando_hay_retroceso():
+    """Entrada (cambio): E1 sin elecciones, luego 'revisar', 'investigar', 'd', 'd'.
+    Esperado: al inicio no se ofrece deshacer; tras elegir sí; el segundo 'd' informa que no hay retroceso."""
+    sesion = sesion_oficial()
+    _, inicio = jugar(sesion_oficial(), [])
+    assert "deshacer" not in inicio
+    _, texto = jugar(sesion, ["revisar", "investigar", "d", "d"])
+    assert "(d para deshacer la última elección)" in texto
+    assert "Se deshizo la última elección." in texto
+    assert "No hay ninguna elección que deshacer." in texto
+    assert sesion.escena_actual.id == "E2" and sesion.variables["conoce_origen"] is False
+
+
+def test_cli_deshacer_desde_FIN():
+    """Entrada (cambio): llegar a E6 y escribir 'deshacer'. Esperado: FIN ofrece 'd deshacer' y vuelve a E3."""
+    sesion = sesion_oficial()
+    _, texto = jugar(sesion, ["revisar", "continuar", "cortar", "deshacer"])
+    assert "«FIN»" in texto and "d deshacer, r reiniciar, q salir" in texto
+    assert sesion.escena_actual.id == "E3"
+
+
 def test_cli_fin_de_entrada_termina_de_forma_controlada():
     """Entrada: EOF inmediato. Esperado: mensaje de despedida y código 0, sin excepción."""
     codigo, texto = jugar(sesion_oficial(), [])

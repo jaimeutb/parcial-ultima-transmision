@@ -26,6 +26,22 @@ def test_I1_archivo_oficial_recorre_hasta_cada_final(pasos, final, variables):
     assert sesion.es_final and sesion.opciones_habilitadas() == []
 
 
+@pytest.mark.parametrize("pasos, final, variables", RUTAS_OFICIALES, ids=["E4", "E5", "E6_investigando", "E6_sin_investigar"])
+def test_I1_extendido_deshacer_desde_cada_final_tras_cargar_el_archivo(pasos, final, variables):
+    """Entrada (cambio): cargar el archivo real, llegar al final y deshacer.
+    Esperado: E3 con las variables previas a la última elección; un segundo deshacer devuelve SIN_RETROCESO."""
+    sesion = Sesion(cargar_historia(RUTA_OFICIAL))
+    for paso in pasos:
+        sesion.elegir(paso)
+    assert sesion.escena_actual.id == final
+    previo = {"conoce_origen": pasos[1] == "investigar", "confia_en_la_voz": False}
+    assert sesion.deshacer().ok
+    assert sesion.escena_actual.id == "E3"
+    assert sesion.variables == previo
+    assert sesion.deshacer().codigo == "SIN_RETROCESO"
+    assert sesion.variables == previo
+
+
 RUTAS_FARO = [
     (["faro_buscar_llave", "faro_abrir_candado", "faro_encender_lampara"], "faro_rescate",
      {"tiene_llave": True, "lampara_encendida": True}),
@@ -45,6 +61,16 @@ def test_I1_segunda_historia_llega_a_sus_finales_sin_cambiar_el_motor(pasos, fin
     assert sesion.escena_actual.id == final
     assert sesion.variables == variables
     assert sesion.es_final
+
+
+def test_I1_segunda_historia_deshacer_desde_un_final():
+    """Entrada (cambio): el_faro hasta faro_rescate y deshacer. Esperado: sala de la lámpara con lampara_encendida falso."""
+    sesion = Sesion(cargar_historia(RUTA_FARO))
+    for paso in RUTAS_FARO[0][0]:
+        sesion.elegir(paso)
+    assert sesion.deshacer().ok
+    assert sesion.escena_actual.id == "faro_sala_lampara"
+    assert sesion.variables == {"tiene_llave": True, "lampara_encendida": False}
 
 
 def test_I1_segunda_historia_condicion_oculta_opcion_sin_llave():
