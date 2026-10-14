@@ -18,7 +18,7 @@ import zipfile
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-INCLUIR = ["motor", "historias", "tests", "scripts", "docs", "evidencias", "README.md", "requirements.txt",
+INCLUIR = ["motor", "historias", "tests", "scripts", "docs", "evidencias", "README.md", "requirements.txt", "requirements-docs.txt",
            "pytest.ini", "entrega/video.mp4"]
 CARPETAS_EXCLUIDAS = {".git", ".venv", "venv", "__pycache__", ".pytest_cache", "enunciado"}
 EXTENSIONES_EXCLUIDAS = {".pyc", ".pyo"}
