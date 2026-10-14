@@ -1,8 +1,9 @@
 # Solicitud de cambio del parcial — La última transmisión
 
 > Transcripción del documento publicado por el docente a la hora 6. El PDF original
-> se descarga del aula virtual y se conserva en `enunciado/` junto a la guía.
-> [COMPLETAR: confirmar que esta transcripción coincide con el PDF descargado de Savio y anotar la hora real en que lo descargaron.]
+> se conserva en `enunciado/Anexo hora 6 La ultima transmision.pdf` junto a la guía.
+> La transcripción coincide palabra por palabra con ese PDF (verificado el 2026-10-15).
+> El archivo descargado tiene fecha de creación 2026-10-15 06:45 (+0700) en la carpeta de descargas.
 
 Material para entregar al cumplirse la hora 6. El cierre del parcial se mantiene en la hora 12.
 
