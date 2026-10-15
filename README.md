@@ -4,9 +4,11 @@ Parcial práctico de Ingeniería de Software. Motor genérico que carga historia
 
 ## Autor
 
-- [COMPLETAR: nombre completo]
+- JAIME MO CHEN
 
-Trabajo **individual** (la guía prevé parejas). [COMPLETAR: indicar si el docente lo autorizó y cómo, p. ej. «autorizado por mensaje en Savio el …»; si no hubo respuesta, decirlo.]
+Curso / grupo: 1206 · Docente: Aisner Jose Marrugo Juliao
+
+Trabajo **individual** (la guía prevé parejas). 14/10/2026.
 
 ## Versiones requeridas
 

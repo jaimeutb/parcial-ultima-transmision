@@ -1,7 +1,7 @@
 # Backlog del producto
 
 Prioridad: **A** imprescindible para la entrega · **M** necesaria · **B** deseable.
-Estado al etiquetar `v2-cambio`. Trabajo individual: el responsable de todos los ítems es el autor, [COMPLETAR: nombre] (usuario Git `jaimeutb`); debe coincidir con el tablero.
+Estado al etiquetar `v2-cambio`. Trabajo individual: el responsable de todos los ítems es el autor, JAIME MO CHEN (usuario Git `jaimeutb`); debe coincidir con el tablero.
 Los ítems marcados **🕕 hora 6** se agregaron al recibir la solicitud de cambio.
 
 | ID | Ítem | RF / RNF | Prioridad | Responsable | Estado | Evidencia |
@@ -24,7 +24,7 @@ Los ítems marcados **🕕 hora 6** se agregaron al recibir la solicitud de camb
 | B16 🕕 hora 6 | Pruebas U6 y extensiones de U5 e I1 | RF17 | A | Autor | Hecho | `tests/test_deshacer.py` |
 | B17 🕕 hora 6 | Actualizar trazabilidad y backlog | RF17 | A | Autor | Hecho | `docs/trazabilidad.md` |
 | B18 | Verificación de RNF con script reproducible | RNF-01..03 | A | Autor | Hecho | `scripts/verificar_rnf.py`, `evidencias/rnf/` |
-| B19 | README con instalación, ejecución, formato y rutas | — | A | Autor | Hecho (faltan nombres y enlace) | `README.md` |
+| B19 | README con instalación, ejecución, formato y rutas | — | A | Autor | Hecho (falta el enlace del video) | `README.md` |
 | B20 | Informe y anexo en PDF | — | A | Autor | En curso (PDF generados con `scripts/generar_pdfs.py`; faltan los [COMPLETAR]) | `docs/informe.md`, `docs/anexo.md` |
 | B21 | Tablero en Trello y capturas inicial y final | — | A | Autor | En curso | `evidencias/tablero/` |
 | B22 | Video de demostración ≤ 6 min | — | A | Autor | Pendiente | `entrega/video.mp4` o enlace en README |

@@ -6,10 +6,10 @@
 
 | | |
 |---|---|
-| Autor | [COMPLETAR: nombre completo] |
-| Modalidad | Individual; la guía prevé parejas. [COMPLETAR: motivo y si el docente lo autorizó (medio y fecha).] |
-| Curso / grupo | [COMPLETAR] |
-| Docente | [COMPLETAR] |
+| Autor | JAIME MO CHEN |
+| Modalidad | Individual; la guía prevé parejas. 14/10/2026. |
+| Curso / grupo | 1206 |
+| Docente | Aisner Jose Marrugo Juliao |
 | Apertura y cierre del parcial | [COMPLETAR: fecha y horas] |
 | Repositorio / versiones | Git local; etiquetas `v1-inicial` (antes del cambio) y `v2-cambio` (después) |
 | Video | [COMPLETAR: `entrega/video.mp4` o enlace con acceso para el docente] |
@@ -95,7 +95,7 @@ Trabajo individual: todos los commits de `evidencias/historial_git.txt` (autor `
 
 | Autor | Trabajo propio | Generado con IA y verificado |
 |---|---|---|
-| [COMPLETAR: nombre] | [COMPLETAR: lo que hizo personalmente, p. ej. redactar el prompt, revisar requisitos, tablero, video, decisiones de las preguntas, revisión de código] | código, pruebas y borradores (ver §10), verificados mediante [COMPLETAR] |
+| JAIME MO CHEN | [COMPLETAR: lo que hizo personalmente, p. ej. redactar el prompt, revisar requisitos, tablero, video, decisiones de las preguntas, revisión de código] | código, pruebas y borradores (ver §10), verificados mediante [COMPLETAR] |
 
 ## 10. Fuentes y herramientas
 
