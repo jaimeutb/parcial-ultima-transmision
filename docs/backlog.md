@@ -24,11 +24,11 @@ Los ítems marcados **🕕 hora 6** se agregaron al recibir la solicitud de camb
 | B16 🕕 hora 6 | Pruebas U6 y extensiones de U5 e I1 | RF17 | A | Autor | Hecho | `tests/test_deshacer.py` |
 | B17 🕕 hora 6 | Actualizar trazabilidad y backlog | RF17 | A | Autor | Hecho | `docs/trazabilidad.md` |
 | B18 | Verificación de RNF con script reproducible | RNF-01..03 | A | Autor | Hecho | `scripts/verificar_rnf.py`, `evidencias/rnf/` |
-| B19 | README con instalación, ejecución, formato y rutas | — | A | Autor | Hecho (falta el enlace del video) | `README.md` |
-| B20 | Informe y anexo en PDF | — | A | Autor | En curso (PDF generados con `scripts/generar_pdfs.py`; faltan los [COMPLETAR]) | `docs/informe.md`, `docs/anexo.md` |
-| B21 | Tablero en Trello y capturas inicial y final | — | A | Autor | En curso | `evidencias/tablero/` |
-| B22 | Video de demostración ≤ 6 min | — | A | Autor | Pendiente | `entrega/video.mp4` o enlace en README |
-| B23 | Empaquetar ZIP y subirlo a Savio | — | A | Autor | Pendiente | `scripts/empaquetar.py` |
+| B19 | README con instalación, ejecución, formato y rutas | — | A | Autor | Hecho | `README.md` |
+| B20 | Informe y anexo en PDF | — | A | Autor | Hecho (PDF generados con `scripts/generar_pdfs.py`) | `docs/informe.md`, `docs/anexo.md` |
+| B21 | Tablero en Trello y capturas inicial y final | — | A | Autor | Hecho (captura inicial reconstruida al final; ver anexo) | `evidencias/tablero/` |
+| B22 | Video de demostración ≤ 6 min | — | A | Autor | Hecho | enlace de YouTube en README |
+| B23 | Empaquetar ZIP y subirlo a Savio | — | A | Autor | En curso (ZIP generado; se sube a Savio al final) | `scripts/empaquetar.py` |
 | B24 | Comando `e`/estado para ver variables en la demostración | RF07 | B | Autor | Hecho | `motor/cli.py::Consola.mostrar_estado` |
 | B25 | Menú para elegir historia si no se pasa ruta | RF01 | B | Autor | Hecho | `motor/cli.py::elegir_historia` |
 
@@ -42,4 +42,4 @@ Un ítem está **terminado** cuando:
 4. Ningún error llega al usuario como traceback; los mensajes están en español.
 5. Los modelos, la trazabilidad y el README reflejan el cambio con los mismos nombres que el código.
 6. Está en un commit pequeño cuyo mensaje cita el RF o la prueba (p. ej., `RF17: …`).
-7. [COMPLETAR/confirmar] El autor relee el cambio y su prueba en una segunda pasada antes de marcarlo «hecho» (sustituye la revisión entre integrantes en el trabajo individual).
+7. El comportamiento se comprueba también ejecutando el programa antes de marcarlo «hecho» (sustituye la revisión entre integrantes en el trabajo individual).

@@ -14,7 +14,7 @@ Solicitud transcrita en [solicitud_cambio.md](solicitud_cambio.md).
 **Declaración honesta sobre esta etiqueta.** El repositorio se creó con `git init` en esta misma sesión de trabajo; antes no había código. La versión inicial se construyó con ayuda de Claude Code siguiendo el alcance inicial (sin retroceso) y se etiquetó `v1-inicial` en la fecha real indicada arriba, **sin modificar fechas**. El texto de la solicitud de cambio ya estaba disponible en el prompt usado, pero no se incorporó nada de ella antes de la etiqueta: `docs/solicitud_cambio.md` y todo el código de deshacer se agregaron en commits posteriores (`7cc7050` en adelante).
 **Cambio de identidad en el historial.** Los commits se crearon originalmente con la identidad Git global del equipo usado (`workaumz-debug`). Antes del primer `push`, el autor y el committer de los 17 commits se reescribieron a `jaimeutb <eudonemia@gmail.com>` con `git filter-branch --env-filter`, **conservando las fechas, los mensajes y el contenido** (mismo árbol de archivos). Por eso cambiaron los hashes; los que aparecen en este documento son los nuevos. Las etiquetas se recrearon apuntando a los commits reescritos con su fecha original.
 
-[COMPLETAR: si al recibir la solicitud a la hora 6 tenían otra versión (en otro repositorio, carpeta o máquina), indicarlo aquí con su fecha real; si no, confirmar que `v1-inicial` es la versión de partida y a qué hora del parcial (hora de apertura + N) se creó.]
+No hubo otra versión en otro repositorio, carpeta o máquina: `v1-inicial` es la versión de partida. Se creó el 14/10/2026 a las 17:52 hora de Colombia (UTC−5), que corresponde al 2026-10-15 05:52 en UTC+7. Con la apertura a las 14:00, fue en la hora 3 h 52 min del parcial.
 
 ## 2. Versión resultante
 
@@ -83,7 +83,7 @@ Solicitud transcrita en [solicitud_cambio.md](solicitud_cambio.md).
 
 ## 5. Evidencia de funcionamiento
 
-- Pruebas: `python -m pytest -v` → **148 pasan, 0 fallan** (`evidencias/resultados_pruebas.txt`), incluidas las 12 ejecuciones de `test_U6_*` y las extensiones de U5 e I1.
+- Pruebas: `python -m pytest -v` → **148 pasan, 0 fallan** en `v2-cambio`; en la última ejecución, **301 pasan, 0 fallan** (`evidencias/resultados_pruebas.txt`), incluidas las 12 ejecuciones de `test_U6_*` y las extensiones de U5 e I1.
 - RNF: `python scripts/verificar_rnf.py` → los tres CUMPLE (`evidencias/rnf/resultado_rnf.txt`).
 - Etiquetas: `v1-inicial` (antes) y `v2-cambio` (después); historial en `evidencias/historial_git.txt`.
-- Demostración: en el video [COMPLETAR: minuto en que se muestra deshacer] se reproduce el ejemplo del docente: `revisar`, `investigar`, `d`, `d`, `continuar`.
+- Demostración: en el video, desde el minuto 0:07, se reproduce el ejemplo del docente: `revisar`, `investigar`, `d`, `d`, `continuar`.

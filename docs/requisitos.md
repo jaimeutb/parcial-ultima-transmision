@@ -71,9 +71,9 @@ La trazabilidad completa (modelo, archivo, prueba, evidencia) está en [trazabil
 
 | # | Pregunta | Respuesta o supuesto |
 |---|---|---|
-| P1 | La escritora quiere poder retroceder siempre; el diseñador quiere decisiones irreversibles. ¿Se permite retroceder? | **Acuerdo provisional** (guía): la versión inicial no implementa retroceso; se documenta el conflicto. **Resolución posterior**: la solicitud de cambio de la hora 6 decide un retroceso de **un solo nivel** (RF17). [COMPLETAR: indicar si enviaron esta pregunta al docente, cuándo y qué respondió; si no hubo respuesta, dejar «sin respuesta dentro de la ventana».] |
-| P2 | ¿En qué formato escribirán los escritores las historias? | **Supuesto**: JSON con el contrato de referencia de la guía, porque el archivo oficial ya usa ese formato y Python lo lee con la biblioteca estándar. El README explica el formato para quien no programa. [COMPLETAR si hubo respuesta del docente.] |
-| P3 | ¿Qué debe ocurrir si en una escena no final ninguna opción queda habilitada? | **Supuesto** compatible con la guía: informar el bloqueo y permitir reiniciar (RF16). Tras el cambio también se puede deshacer. No se analiza automáticamente cada camino del relato (fuera de alcance según la guía). [COMPLETAR si hubo respuesta.] |
+| P1 | La escritora quiere poder retroceder siempre; el diseñador quiere decisiones irreversibles. ¿Se permite retroceder? | **Acuerdo provisional** (guía): la versión inicial no implementa retroceso; se documenta el conflicto. **Resolución posterior**: la solicitud de cambio de la hora 6 decide un retroceso de **un solo nivel** (RF17). La pregunta no se envió al docente; se mantuvo el acuerdo provisional hasta la solicitud de cambio. |
+| P2 | ¿En qué formato escribirán los escritores las historias? | **Supuesto**: JSON con el contrato de referencia de la guía, porque el archivo oficial ya usa ese formato y Python lo lee con la biblioteca estándar. El README explica el formato para quien no programa. No se envió al docente; se mantiene el supuesto. |
+| P3 | ¿Qué debe ocurrir si en una escena no final ninguna opción queda habilitada? | **Supuesto** compatible con la guía: informar el bloqueo y permitir reiniciar (RF16). Tras el cambio también se puede deshacer. No se analiza automáticamente cada camino del relato (fuera de alcance según la guía). No se envió al docente; se mantiene el supuesto. |
 
 Supuestos menores adicionales: los IDs distinguen mayúsculas y minúsculas; `condiciones` y `efectos` son obligatorios aunque estén vacíos (`{}`), igual que en el archivo oficial; si un `id` de opción coincide con un comando de la consola (`r`, `q`, `d`, `e`, `?`), se elige por número.
 
@@ -85,7 +85,6 @@ Supuestos menores adicionales: los IDs distinguen mayúsculas y minúsculas; `co
 
 ## 6. Defecto detectado en revisión
 
-El trabajo fue individual, por lo que no hubo revisión cruzada entre integrantes. Se sustituyó por una revisión propia de los requisitos en una segunda pasada, contrastándolos con los criterios CA01–CA03 y con las pruebas.
-[COMPLETAR: confirmar el candidato siguiente o reemplazarlo por el defecto que realmente detectó al revisar, y cómo lo corrigió.]
+El trabajo fue individual, por lo que no hubo revisión cruzada entre integrantes. La ambigüedad siguiente se detectó al redactar los requisitos con apoyo de la IA (ver informe §10).
 
-**Candidato sugerido (confirmar o reemplazar):** una primera redacción de RF06 decía «el sistema ignora las opciones inválidas». Es ambigua: no dice si el estado cambia, si el lector recibe un mensaje, ni si cubre un `id` que existe pero no está habilitado y se envía directamente al motor (CA02). **Corrección**: RF06 especifica que la opción inexistente **o no habilitada** se rechaza con mensaje, que escena y variables quedan idénticas y que la regla se aplica en `Sesion.elegir`, no solo en la interfaz; se agregó el criterio CA02 y la prueba `test_U3_CA02_activar_codigo_sin_conocer_origen_se_rechaza`.
+**Ambigüedad en N03:** «los errores de entrada no deben alterar la partida» no dice si el estado cambia, si el lector recibe un mensaje, ni si cubre un `id` que existe pero no está habilitado y se envía directamente al motor (CA02). **Corrección**: RF06 especifica que la opción inexistente **o no habilitada** se rechaza con mensaje, que escena y variables quedan idénticas y que la regla se aplica en `Sesion.elegir`, no solo en la interfaz; se agregó el criterio CA02 y la prueba `test_U3_CA02_activar_codigo_sin_conocer_origen_se_rechaza`.

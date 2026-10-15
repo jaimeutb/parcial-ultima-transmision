@@ -137,7 +137,7 @@ Condición visible: en E3 aparece `activar_codigo` solo si se investigó, y `act
 
 ## Demostración en video
 
-[COMPLETAR: `entrega/video.mp4` incluido en el ZIP, o enlace con acceso para el docente.]
+Video en YouTube (acceso con el enlace): <https://www.youtube.com/watch?v=EbNj41xc3BY>
 
 ## Documentación
 
