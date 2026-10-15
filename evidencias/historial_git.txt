@@ -1,4 +1,13 @@
-bf3962a | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:21:01 +0700 |  (HEAD -> main) Docs: actualizar hashes tras reescribir la identidad del autor antes del primer push
+610171b | jaimeutb <eudonemia@gmail.com> | 2026-10-15 11:41:15 +0700 |  (HEAD -> main) Entrega: enlace del video, horario del parcial y [COMPLETAR] llenados; PDF regenerados
+afd8f7a | jaimeutb <eudonemia@gmail.com> | 2026-10-15 08:56:54 +0700 |  (origin/main, origin/HEAD) Identificación del autor, curso y docente; guion del video con rótulos
+944dcdf | jaimeutb <eudonemia@gmail.com> | 2026-10-15 07:03:10 +0700 |  B21: capturas del tablero Trello (inicial reconstruida y final) en el anexo
+9a4a3d3 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:50:36 +0700 |  B21: tarjetas para Trello y capturas del tablero insertadas automáticamente en el anexo
+1744962 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:46:37 +0700 |  Solicitud de cambio: PDF original en enunciado/ y transcripción verificada
+1b3c43e | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:40:38 +0700 |  Empaquetado: incluir requirements-docs.txt en el ZIP
+0274c4f | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:40:31 +0700 |  Lista de revisión §8: PDFs, coherencia documental verificada y diagrama de secuencia corregido
+6783b07 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:28:06 +0700 |  Evidencias: agregar historial de commits y resultados de pruebas
+ff721d4 | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:27:02 +0700 |  Docs y empaquetado adaptados a trabajo individual
+bf3962a | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:21:01 +0700 |  Docs: actualizar hashes tras reescribir la identidad del autor antes del primer push
 60a506d | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:05:36 +0700 |  Entrega: script de empaquetado con simulación, guía de capturas y evidencias actualizadas
 33c7cbb | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:04:39 +0700 |  Docs: README, backlog con DoD, borrador del informe y anexo generado
 564cf2e | jaimeutb <eudonemia@gmail.com> | 2026-10-15 06:02:27 +0700 |  Docs: requisitos (RF01-RF17, RNF), modelos, arquitectura, impacto y trazabilidad
