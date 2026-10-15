@@ -248,8 +248,12 @@ Tablero en Trello con los ítems de `docs/backlog.md` (trabajo individual: todas
 
 ### D.1 Captura inicial
 
-[COMPLETAR: guardar `evidencias/tablero/tablero_inicial.png` y volver a ejecutar este script]
+![tablero_inicial](../evidencias/tablero/tablero_inicial.png)
+
+*Archivo `tablero_inicial.png`, capturado el 2026-10-15 06:53.*
 
 ### D.2 Captura final
 
-[COMPLETAR: guardar `evidencias/tablero/tablero_final.png` y volver a ejecutar este script]
+![tablero_final](../evidencias/tablero/tablero_final.png)
+
+*Archivo `tablero_final.png`, capturado el 2026-10-15 07:01.*
